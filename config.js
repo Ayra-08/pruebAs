@@ -52,7 +52,7 @@ global.authFileRespald = join(__dirname, `sesionRespaldo/`)
 global.temp = join(__dirname, 'tmp')
 global.media = raiz+'media/'
 global.jadibts = join(__dirname, 'jadibts/')
-global.imagen1 = fs.readFileSync('./menu2.jpg')
+global.imagen1 = fs.readFileSync('./Menu2.jpg')
 
 // Sticker WM / Info del sticker 
 global.packname = 'Runa Bot 🈴'
