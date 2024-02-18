@@ -1,7 +1,7 @@
-console.log('CARGANDO Bot Tiburón🦈 v21.')
-console.log('CARGANDO Bot Tiburón🦈 v21..')
-console.log('CARGANDO Bot Tiburón🦈 v21...')
-console.log('INICIANDO Bot Tiburón🦈 v21')
+console.log('CARGANDO Bot Runa v21.')
+console.log('CARGANDO Bot Runa v21..')
+console.log('CARGANDO Bot Runa v21...')
+console.log('INICIANDO Bot Runa v21')
 
 import { join, dirname } from 'path'
 import { createRequire } from 'module';
@@ -20,7 +20,7 @@ const { name, author } = require(join(__dirname, './package.json')) // https://w
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 
-say('Bot Tiburon\nWhatsApp Bot', {
+say('Runa Bot\nBy Daniel', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
