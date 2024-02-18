@@ -745,6 +745,7 @@ global.dfail = (type, m, conn) => {
         group: '*Este comando se utiliza en grupos*',
         private: '*Este comando solo se usa en chat privado del bot*',
         admin: '*Este comando solo se utiliza siendo admin del grupo*',
+        unreg: '*Rᴇɢɪsᴛʀᴏ*\n\nPara usar el bot debes registrarte primero\n\nUtiliza: */reg nombre.edad*\n\n_Ejemplo: */reg Daniel*_\n\nNo pongas los * *',
         botAdmin: '*Este comando solo se utiliza cuando el bot es admin*'
     }[type]
 if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, showAdAttribution: true, externalAdReply: { title: 'â•°âœ® AÉª OÊœá´›á´ - MD âœ®â•®', body: 'WÊœá´€á´›êœ±á´€á´˜á´˜ Bá´á´› - Má´œÊŸá´›Éª Dá´‡á´ Éªá´„á´‡', thumbnail: await (await fetch(`https://telegra.ph/file/b45ba57f42baf667e7dce.jpg`)).buffer(), thumbnailUrl: await (await fetch(`https://telegra.ph/file/b45ba57f42baf667e7dce.jpg`)).buffer(), sourceUrl: 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33', mediaType: 1 }}}, { quoted: m })
