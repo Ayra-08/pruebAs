@@ -55,9 +55,9 @@ global.jadibts = join(__dirname, 'jadibts/')
 global.imagen1 = fs.readFileSync('./menu2.jpg')
 
 // Sticker WM / Info del sticker 
-global.packname = 'Bot Tiburón🦈'
-global.author = 'DIEGO-OFC'
-global.wm = 'Bot Tiburón🦈'
+global.packname = 'Runa Bot 🈴'
+global.author = 'Daniel'
+global.wm = 'Runa Bot'
 
 global.multiplier = 100 // más alto el número, más difícil se volverá subir de nivel
 
