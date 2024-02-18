@@ -20,7 +20,7 @@ const { name, author } = require(join(__dirname, './package.json')) // https://w
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 
-say('Runa Bot\nBy Daniel', {
+say('Runa Bot\nBot creado para Ayra\n Te amo <3', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
