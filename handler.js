@@ -738,26 +738,26 @@ Detectado @${participant.split`@`[0]} Elimino un mensaje.
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: 'Bot Tiburón🦈 | *CREADOR*\n\nEste comando solo puede ser utilizado por el CREADOR!!',
-        owner: 'Bot Tiburón🦈 | *BOT*\n\nEste comando solo puede ser utilizado por un _*BOT*_!*',
-		smods: 'Bot Tiburón🦈 | *「 ERROR 」*\n\nEste comando solo puede ser utilizado por un _*Moderador*_!',
-        mods: 'Bot Tiburón🦈\n\n | *「 ERROR 」*\n\nEste comando solo puede ser utilizado por un _*Moderador*_!',
-        premium: 'Bot Tiburón🦈\n\n | *「 👑 PREMIUM 」*\n\nEste comando solo puede ser utilizado por miembros _*Premium*_',
-        banned: 'Bot Tiburón🦈 | *「 ⚠️ ERROR 」*\n\nEste comando es solo para usuarios BANEADOS.',
-		group: 'Bot Tiburón🦈\n\nEste comando solo puede ser utilizado en un grupo!!*',
-        private: 'Bot Tiburón🦈\n\nEste comando solo puede ser utilizado en el privado del bot',
-        admin: 'Bot Tiburón🦈 | *STAFF*\n\nEste comando solo puede ser utilizado por *Admins* del grupo!',
-        botAdmin: 'Bot Tiburón🦈 | *STAFF*\n\nHaga el bot *Admin* del grupo para utilizar este comando!!',
-        unreg: 'Bot Tiburón🦈 | *Rᴇɢɪsᴛʀᴏ*\n\nPara usar el bot debes registrarte primero\n\nUtiliza: */reg nombre.edad*\n\n_Ejemplo: */reg Diego-Ofc.666*_\n\nNo pongas los * *',
-        restrict: 'Bot Tiburón🦈 | *「 ERROR 」*\n\nESTE COMANDO ESTA  *deshabilitado*!'
+        rowner: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo puede ser utilizada por creadores del bot*',
+        owner: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo puede ser utilizada por owners del bot*',
+        mods: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo puede ser utilizada por moderadores del bot*',
+        premium: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo puede ser utilizada por usuarios premium del bot*',
+        group: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando se utiliza en grupos*',
+        private: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo se usa en chat privado del bot*',
+        admin: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo se utiliza siendo admin del grupo*',
+        botAdmin: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo se utiliza cuando el bot es admin*'
     }[type]
-    if (msg) return m.reply(msg)
-}
-
-
-let file = Helper.__filename(import.meta.url, true)
+if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, showAdAttribution: true, externalAdReply: { title: 'â•°âœ® AÉª OÊœá´›á´ - MD âœ®â•®', body: 'WÊœá´€á´›êœ±á´€á´˜á´˜ Bá´á´› - Má´œÊŸá´›Éª Dá´‡á´ Éªá´„á´‡', thumbnail: await (await fetch(`https://i.postimg.cc/B6CDnZG3/wonder-egg-priority-icons.jpg`)).buffer(), thumbnailUrl: await (await fetch(`https://i.postimg.cc/B6CDnZG3/wonder-egg-priority-icons.jpg`)).buffer(), sourceUrl: 'youtube.com/@KrizDavid_Fdz', mediaType: 1 }}}, { quoted: m })
+} 
+let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {
-    unwatchFile(file)
-    console.log(chalk.redBright("Update 'handler.js'"))
-    if (Connection.reload) console.log(await Connection.reload(await Connection.conn))
+  unwatchFile(file)
+  console.log(chalk.redBright('Update \'handler.js\''))
+  if (global.reloadHandler) console.log(await global.reloadHandler())  
+  if (global.conns && global.conns.length > 0 ) {
+    const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])]
+    for (const userr of users) {
+      userr.subreloadHandler(false)
+    }
+  }  
 })
