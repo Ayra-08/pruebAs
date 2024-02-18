@@ -738,16 +738,16 @@ Detectado @${participant.split`@`[0]} Elimino un mensaje.
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo puede ser utilizada por creadores del bot*',
-        owner: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo puede ser utilizada por owners del bot*',
-        mods: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo puede ser utilizada por moderadores del bot*',
-        premium: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo puede ser utilizada por usuarios premium del bot*',
-        group: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando se utiliza en grupos*',
-        private: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo se usa en chat privado del bot*',
-        admin: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo se utiliza siendo admin del grupo*',
-        botAdmin: ' ÍŸÍŸÍžÍžê’°âž³ *Este comando solo se utiliza cuando el bot es admin*'
+        rowner: '*Este comando solo puede ser utilizada por creadores del bot*',
+        owner: '*Este comando solo puede ser utilizada por owners del bot*',
+        mods: '*Este comando solo puede ser utilizada por moderadores del bot*',
+        premium: '*Este comando solo puede ser utilizada por usuarios premium del bot*',
+        group: '*Este comando se utiliza en grupos*',
+        private: '*Este comando solo se usa en chat privado del bot*',
+        admin: '*Este comando solo se utiliza siendo admin del grupo*',
+        botAdmin: '*Este comando solo se utiliza cuando el bot es admin*'
     }[type]
-if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, showAdAttribution: true, externalAdReply: { title: 'â•°âœ® AÉª OÊœá´›á´ - MD âœ®â•®', body: 'WÊœá´€á´›êœ±á´€á´˜á´˜ Bá´á´› - Má´œÊŸá´›Éª Dá´‡á´ Éªá´„á´‡', thumbnail: await (await fetch(`https://i.postimg.cc/B6CDnZG3/wonder-egg-priority-icons.jpg`)).buffer(), thumbnailUrl: await (await fetch(`https://i.postimg.cc/B6CDnZG3/wonder-egg-priority-icons.jpg`)).buffer(), sourceUrl: 'youtube.com/@KrizDavid_Fdz', mediaType: 1 }}}, { quoted: m })
+if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, showAdAttribution: true, externalAdReply: { title: 'â•°âœ® AÉª OÊœá´›á´ - MD âœ®â•®', body: 'WÊœá´€á´›êœ±á´€á´˜á´˜ Bá´á´› - Má´œÊŸá´›Éª Dá´‡á´ Éªá´„á´‡', thumbnail: await (await fetch(`https://telegra.ph/file/b45ba57f42baf667e7dce.jpg`)).buffer(), thumbnailUrl: await (await fetch(`https://telegra.ph/file/b45ba57f42baf667e7dce.jpg`)).buffer(), sourceUrl: 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33', mediaType: 1 }}}, { quoted: m })
 } 
 let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {
