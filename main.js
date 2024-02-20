@@ -1,19 +1,27 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1';
-process.on('uncaughtException', console.error)
 
-import './config.js';
+import './config.js'; 
+import { createRequire } from "module"; 
 import path, { join } from 'path'
-import { writeFileSync, readdirSync, statSync, unlinkSync, existsSync, readFileSync, copyFileSync, watch, rmSync, readdir, stat } from 'fs';
+import { fileURLToPath, pathToFileURL } from 'url'
+import { platform } from 'process'
+import * as ws from 'ws';
+import { readdirSync, statSync, unlinkSync, existsSync, readFileSync, watch, rmSync } from 'fs';
 import yargs from 'yargs';
 import { spawn } from 'child_process';
-import chalk from 'chalk';
+import lodash from 'lodash';
+import chalk from 'chalk'
+import syntaxerror from 'syntax-error';
 import { tmpdir } from 'os';
-import { protoType, serialize } from './lib/simple.js';
-import { plugins, filesInit, reload} from './lib/plugins.js'
-import Connection from './lib/connection.js'
-import Helper from './lib/helper.js'
-import db, { loadDatabase } from './lib/database.js'
-import { platform } from 'process' 
+import { format } from 'util';
+import { makeWASocket, protoType, serialize } from './lib/simple.js';
+import { Low, JSONFile } from 'lowdb';
+import pino from 'pino';
+import { mongoDB, mongoDBV2 } from './lib/mongoDB.js';
+import store from './lib/store.js'
+const { makeCacheableSignalKeyStore, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion } = await import('@whiskeysockets/baileys')
+const { CONNECTING } = ws
+const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 protoType()
